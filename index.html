@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zainab Nayyar — Poster Portfolio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Pixelify+Sans:wght@400;600&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#f7f2e2;color:#2c48c7;}
+*{box-sizing:border-box;}
+a{color:#2c48c7;text-decoration:none;}
+a:hover{color:#ec6a52;}
+img{user-select:none;-webkit-user-drag:none;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#f7f2e2;color:#2c48c7;font-family:'Familjen Grotesk',sans-serif;overflow-x:hidden;">
+
+  <section id="top" style="background:{{ heroBg }};color:{{ heroInk }};transition:background .7s ease,color .7s ease;padding-bottom:18px;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;">
+    <header style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:start;gap:16px;padding:18px clamp(16px,4vw,56px) 0;">
+      <nav style="display:flex;gap:clamp(14px,3vw,48px);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;padding-top:10px;">
+        <a href="#book" style="color:inherit;">Flower book</a>
+        <a href="#wall" style="color:inherit;">The wall</a>
+      </nav>
+      <div style="display:grid;justify-items:center;gap:8px;text-align:center;">
+        <div style="font-family:'Gloock',serif;font-size:clamp(24px,2.6vw,38px);line-height:1;">{{ artistName }}</div>
+        <div style="font-family:'Pixelify Sans',sans-serif;font-size:14px;">poster design &amp; collage</div>
+        <div onClick="{{ openCherries }}" style="width:clamp(52px,5vw,72px);height:clamp(52px,5vw,72px);border-radius:50%;overflow:hidden;border:2px solid currentColor;margin-top:4px;cursor:pointer;background:#f6e27a;">
+          <img src="images/1000047148.jpg" alt="cherries" style="width:100%;height:100%;object-fit:cover;object-position:46% 50%;transform:scale(1.9);">
+        </div>
+      </div>
+      <nav style="display:flex;justify-content:flex-end;gap:clamp(14px,3vw,48px);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;padding-top:10px;">
+        <a href="#about" style="color:inherit;">About</a>
+        <a href="#contact" style="color:inherit;">Say hi</a>
+      </nav>
+    </header>
+
+    <h1 style="margin:clamp(14px,2.4vh,32px) auto 0;padding:0 16px;max-width:22ch;text-align:center;font-family:'Gloock',serif;font-weight:400;font-size:clamp(34px,min(5vw,7.5vh),84px);line-height:.98;letter-spacing:-.015em;text-wrap:balance;">Posters for flowers, folklore &amp; the moon.</h1>
+
+    <div onMouseLeave="{{ fanLeave }}" style="position:relative;flex:1;min-height:calc(clamp(110px,min(13vw,23vh),260px) * 1.45);margin-top:clamp(12px,2vh,28px);margin-bottom:calc(clamp(110px,min(13vw,23vh),260px) * .5);">
+      <sc-for list="{{ fan }}" as="f" hint-placeholder-count="14">
+        <div onMouseEnter="{{ f.onEnter }}" onClick="{{ f.onOpen }}" style="position:absolute;left:50%;bottom:calc(clamp(110px,min(13vw,23vh),260px) * .25);width:clamp(110px,min(13vw,23vh),260px);margin-left:calc(clamp(110px,min(13vw,23vh),260px) / -2);transform-origin:50% 240%;transform:{{ f.transform }};opacity:{{ f.opacity }};z-index:{{ f.z }};transition:{{ f.transition }};cursor:pointer;">
+          <img src="{{ f.art }}" alt="{{ f.title }}" draggable="false" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;border:3px solid #fffdf5;box-shadow:0 18px 30px -16px rgba(20,24,60,.55);">
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:relative;z-index:200;display:flex;justify-content:center;align-items:baseline;gap:14px;flex-wrap:wrap;padding:0 16px;min-height:36px;text-align:center;">
+      <span style="font-family:'Pixelify Sans',sans-serif;font-size:22px;font-weight:600;">{{ fanTitle }}</span>
+      <span style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;">{{ fanSub }}</span>
+    </div>
+  </section>
+
+  <div style="height:22px;background-color:{{ heroBg }};transition:background-color .7s ease;-webkit-mask-image:radial-gradient(circle at 12px 0,#000 12px,transparent 12.5px);mask-image:radial-gradient(circle at 12px 0,#000 12px,transparent 12.5px);-webkit-mask-size:24px 22px;mask-size:24px 22px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;"></div>
+
+  <section id="book" style="padding:clamp(48px,6vw,80px) clamp(14px,4vw,56px);display:grid;justify-items:center;gap:22px;max-width:1280px;margin:0 auto;">
+    <div style="display:grid;justify-items:center;gap:10px;text-align:center;">
+      <div style="font-family:'Pixelify Sans',sans-serif;font-size:15px;color:#ec6a52;">chapter one</div>
+      <h2 style="margin:0;font-family:'Gloock',serif;font-weight:400;font-size:clamp(32px,3.6vw,54px);line-height:1;">The Flower Book</h2>
+      <p style="margin:0;max-width:44ch;font-size:17px;line-height:1.5;text-wrap:pretty;">Each flower comes as a pair: a picture to look at and a page to read. Click a page to turn it.</p>
+    </div>
+
+    <div style="width:min(960px,100%,calc((100vh - 120px) * 1.5));perspective:2400px;">
+      <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;aspect-ratio:3/2;background:#fffdf5;border-radius:4px;box-shadow:0 40px 60px -30px rgba(20,24,60,.45),0 0 0 1px #e6dcc2;transform-style:preserve-3d;">
+        <div onClick="{{ bookPrev }}" style="position:relative;overflow:hidden;cursor:{{ prevCursor }};border-radius:4px 0 0 4px;">
+          <img src="{{ leftSrc }}" alt="" style="display:block;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 80%,rgba(60,40,10,.18));pointer-events:none;"></div>
+        </div>
+        <div onClick="{{ bookNext }}" style="position:relative;overflow:hidden;cursor:{{ nextCursor }};border-radius:0 4px 4px 0;">
+          <img src="{{ rightSrc }}" alt="" style="display:block;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(270deg,transparent 80%,rgba(60,40,10,.18));pointer-events:none;"></div>
+        </div>
+        <sc-if value="{{ turning }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:0;left:{{ leafLeft }};width:50%;height:100%;transform-origin:{{ leafOrigin }};transform:rotateY({{ leafAng }}deg);transition:transform .85s cubic-bezier(.45,.05,.3,1);transform-style:preserve-3d;z-index:5;pointer-events:none;">
+            <img src="{{ leafFront }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+            <img src="{{ leafBack }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);">
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,20px);flex-wrap:wrap;">
+      <button onClick="{{ bookPrev }}" style="font-family:'Pixelify Sans',sans-serif;font-size:18px;width:48px;height:48px;border-radius:50%;border:2px solid #2c48c7;background:transparent;color:#2c48c7;cursor:pointer;" style-hover="background:#2c48c7;color:#f7f2e2;">&lt;</button>
+      <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="5">
+        <button onClick="{{ c.onClick }}" style="font-family:'Pixelify Sans',sans-serif;font-size:16px;padding:10px 16px;border-radius:999px;border:2px solid #2c48c7;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;white-space:nowrap;">{{ c.label }}</button>
+      </sc-for>
+      <button onClick="{{ bookNext }}" style="font-family:'Pixelify Sans',sans-serif;font-size:18px;width:48px;height:48px;border-radius:50%;border:2px solid #2c48c7;background:transparent;color:#2c48c7;cursor:pointer;" style-hover="background:#2c48c7;color:#f7f2e2;">&gt;</button>
+    </div>
+    <div style="font-family:'Gloock',serif;font-size:18px;">{{ pageLabel }}</div>
+  </section>
+
+  <section id="wall" style="padding:clamp(48px,6vw,80px) clamp(14px,4vw,56px);border-top:2px solid #2c48c7;max-width:1280px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px;">
+      <div style="display:grid;gap:10px;">
+        <div style="font-family:'Pixelify Sans',sans-serif;font-size:15px;color:#ec6a52;">chapter two</div>
+        <h2 style="margin:0;font-family:'Gloock',serif;font-weight:400;font-size:clamp(32px,3.6vw,54px);line-height:1;">Everything else on the wall</h2>
+      </div>
+      <p style="margin:0;max-width:34ch;font-size:16px;line-height:1.5;">Collage, folklore, a guitar and the moon. Move your cursor over a poster to tilt it.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:clamp(18px,2.4vw,32px);">
+      <sc-for list="{{ wall }}" as="w" hint-placeholder-count="9">
+        <div onClick="{{ w.onOpen }}" onMouseMove="{{ w.onMove }}" onMouseLeave="{{ w.onLeave }}" style="grid-column:{{ w.span }};cursor:pointer;perspective:900px;">
+          <div style="position:relative;transform:{{ w.transform }};transition:{{ w.transition }};transform-style:preserve-3d;">
+            <img src="{{ w.art }}" alt="{{ w.title }}" loading="lazy" style="display:block;width:100%;aspect-ratio:{{ w.ratio }};object-fit:cover;border-radius:6px;box-shadow:{{ w.shadow }};transition:box-shadow .4s;">
+            <div style="position:absolute;left:12px;bottom:12px;font-family:'Pixelify Sans',sans-serif;font-size:16px;background:#f7f2e2;color:#2c48c7;padding:6px 12px;border-radius:999px;opacity:{{ w.labelOpacity }};transform:translateZ(40px);transition:opacity .3s;">{{ w.title }}</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;margin-top:14px;">
+            <span style="font-family:'Gloock',serif;font-size:21px;">{{ w.title }}</span>
+            <span style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:6px;">{{ w.tag }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="about" style="padding:clamp(48px,6vw,80px) clamp(14px,4vw,56px);border-top:2px solid #2c48c7;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,5vw,80px);">
+    <h2 style="margin:0;font-family:'Gloock',serif;font-weight:400;font-size:clamp(30px,3.4vw,48px);line-height:1.06;text-wrap:balance;">I make posters about the small things I can't stop thinking about.</h2>
+    <div style="display:grid;gap:18px;font-size:clamp(16px,1.2vw,18px);line-height:1.55;max-width:52ch;align-content:start;">
+      <p style="margin:0;text-wrap:pretty;">Flower meanings, old woodblock prints, game sprites, torn paper and the moon. I work in collage and type, and most pieces come in pairs: one to hang on a wall, one to learn from.</p>
+      <p style="margin:0;font-family:'Pixelify Sans',sans-serif;color:#ec6a52;">open for poster, editorial &amp; packaging work</p>
+    </div>
+  </section>
+
+  <footer id="contact" style="position:relative;background:#f6e27a;color:#2c48c7;padding:clamp(56px,6vw,88px) max(clamp(14px,4vw,56px),calc((100% - 1280px) / 2)) 28px;">
+    <div style="position:absolute;left:0;right:0;top:-1px;height:22px;background:radial-gradient(circle at 12px 0,#f7f2e2 12px,transparent 12.5px) repeat-x;background-size:24px 22px;"></div>
+    <h2 style="margin:0 0 clamp(40px,5vw,64px);font-family:'Gloock',serif;font-weight:400;font-size:clamp(40px,6vw,96px);line-height:.95;letter-spacing:-.02em;text-align:center;">Thanks for wandering through.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:32px;border-top:2px solid #2c48c7;padding-top:32px;">
+      <div style="display:grid;gap:8px;align-content:start;">
+        <div style="font-family:'Pixelify Sans',sans-serif;font-size:20px;">say hi</div>
+        <a href="mailto:zainabnayyar05@gmail.com" style="font-size:17px;word-break:break-all;">zainabnayyar05@gmail.com</a>
+      </div>
+      <div style="display:grid;gap:8px;align-content:start;">
+        <div style="font-family:'Pixelify Sans',sans-serif;font-size:20px;">look around</div>
+        <a href="#book" style="font-size:17px;">The Flower Book</a>
+        <a href="#wall" style="font-size:17px;">The wall</a>
+      </div>
+      <button onClick="{{ surprise }}" style="justify-self:start;align-self:start;font-family:'Pixelify Sans',sans-serif;font-size:18px;padding:14px 22px;border-radius:999px;border:2px solid #2c48c7;background:#2c48c7;color:#f6e27a;cursor:pointer;" style-hover="background:#ec6a52;border-color:#ec6a52;color:#fffdf5;">surprise me</button>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:56px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;">
+      <span>© 2026 {{ artistName }}</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:1000;background:rgba(247,242,226,.97);display:flex;align-items:center;justify-content:center;padding:clamp(14px,3vw,40px);overflow:auto;">
+      <div onClick="{{ stop }}" style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,56px);align-items:center;justify-content:center;max-width:1240px;width:100%;">
+        <img src="{{ lb.src }}" alt="{{ lb.title }}" style="display:block;max-height:86vh;max-width:min(100%,760px);width:auto;height:auto;border-radius:6px;box-shadow:0 30px 60px -24px rgba(20,24,60,.5);">
+        <div style="flex:1 1 260px;max-width:360px;display:grid;gap:16px;color:#2c48c7;">
+          <div style="font-family:'Pixelify Sans',sans-serif;font-size:16px;color:#ec6a52;">no. {{ lb.no }} of {{ total }}</div>
+          <div style="font-family:'Gloock',serif;font-size:clamp(38px,4vw,58px);line-height:1;">{{ lb.title }}</div>
+          <div style="font-size:17px;line-height:1.55;text-wrap:pretty;">{{ lb.note }}</div>
+          <sc-if value="{{ lb.hasStory }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:6px;">
+              <button onClick="{{ showArt }}" style="font-family:'Pixelify Sans',sans-serif;font-size:16px;padding:9px 16px;border-radius:999px;border:2px solid #2c48c7;cursor:pointer;background:{{ lb.artBg }};color:{{ lb.artFg }};">picture</button>
+              <button onClick="{{ showStory }}" style="font-family:'Pixelify Sans',sans-serif;font-size:16px;padding:9px 16px;border-radius:999px;border:2px solid #2c48c7;cursor:pointer;background:{{ lb.storyBg }};color:{{ lb.storyFg }};">story</button>
+            </div>
+          </sc-if>
+          <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+            <button onClick="{{ prev }}" style="font-family:'Familjen Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#2c48c7;border:2px solid #2c48c7;border-radius:999px;padding:11px 18px;cursor:pointer;">Prev</button>
+            <button onClick="{{ next }}" style="font-family:'Familjen Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:#2c48c7;border:2px solid #2c48c7;border-radius:999px;padding:11px 18px;cursor:pointer;">Next</button>
+            <button onClick="{{ close }}" style="font-family:'Familjen Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:#2c48c7;color:#f7f2e2;border:2px solid #2c48c7;border-radius:999px;padding:11px 18px;cursor:pointer;">Close</button>
+          </div>
+          <div style="font-size:13px;opacity:.7;">arrow keys to browse · esc to close</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;artistName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Zainab Nayyar&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;hoverTint&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;fanSpread&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:16,&quot;max&quot;:50,&quot;step&quot;:1,&quot;unit&quot;:&quot;°&quot;,&quot;default&quot;:34,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;tiltCards&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Wall&quot;}}">
+const U = n => 'images/10000471' + n + '.jpg';
+const PIECES = [
+  { id:'tulip', title:'Tulip', art:U(36), story:U(35), tag:'Flora', tint:'#f6d3cf', note:'Pixel vines, gingham and a field of real tulips. The story page traces tulips back to Central Asia.' },
+  { id:'daffodil', title:'Daffodil', art:U(38), story:U(37), tag:'Flora', tint:'#f3e79c', note:'Art-nouveau tiles and a carved frame around the first flower of spring.' },
+  { id:'aster', title:'Aster', art:U(34), story:U(33), tag:'Flora', tint:'#cde6f4', note:'Arches, sparkles and a pinwheel for the star-shaped flower of patience.' },
+  { id:'hyacinth', title:'Hyacinth', art:U(32), story:U(31), tag:'Flora', tint:'#e5d6f1', note:'Blackletter and botanical line-work for the most sombre flower in the set.' },
+  { id:'sakura', title:'Sakura', art:U(40), story:U(39), tag:'Flora', tint:'#f6cedb', note:'Torn paper, gingham and Fuji under a red sun. On the beauty of short-lived things.' },
+  { id:'lily', title:'Lily', art:U(29), story:null, tag:'Flora', tint:'#fbe0ea', note:'Wavy paper, daisy-print panels and an echoing serif title.' },
+  { id:'summervibes', title:'Summer Vibes', art:U(41), story:null, tag:'Flora', tint:'#d8f0b2', note:'Sunflower cut-outs on a strawberry-print ground.' },
+  { id:'summersong', title:'Summer Song', art:U(42), story:null, tag:'Painting', tint:'#cfe0f6', wide:true, note:'A painted meadow, all dandelion-yellow and cloud-pink.' },
+  { id:'underdog', title:'Underdog', art:U(47), story:null, tag:'Collage', tint:'#dedcd3', note:'Pixel hearts, a swan, a handheld console and a pushpin. A scrapbook page about rooting for the little guy.' },
+  { id:'yourock', title:'You Rock!', art:U(43), story:null, tag:'Collage', tint:'#d6d6d3', note:'Halftone bass guitar, torn-paper stars, one wobbly cable.' },
+  { id:'ukiyo', title:'Snow Bridge', art:U(44), story:null, tag:'Folklore', tint:'#f8c4b2', note:'A snowy ukiyo-e print framed by ink lanterns, plum branches and a gilded red sun.' },
+  { id:'fortune', title:'Fortune', art:U(45), story:null, tag:'Folklore', tint:'#ecb8aa', note:'Fretwork diamond, peony medallion and auspicious clouds in red and cream.' },
+  { id:'cherries', title:'Cherries', art:U(48), story:null, tag:'Illustration', tint:'#f6e27a', note:'Two little cherry friends on butter-yellow.' },
+  { id:'moon', title:'Moon Phases', art:U(46), story:null, tag:'Night sky', tint:'#232a48', dark:true, note:'A full lunar cycle arcing over the Milky Way.' },
+];
+const BOOK = ['tulip','daffodil','aster','hyacinth','sakura'];
+const WALL = ['summersong','underdog','ukiyo','cherries','yourock','fortune','moon','lily','summervibes'];
+const byId = Object.fromEntries(PIECES.map((p, i) => [p.id, { ...p, no: String(i + 1).padStart(2, '0') }]));
+
+class Component extends DCLogic {
+  state = { landed: false, fanHover: null, page: 0, turning: 0, target: 0, leafAng: 0, tilt: null, lb: null, lbStory: false };
+
+  componentDidMount() {
+    this.t = setTimeout(() => this.setState({ landed: true }), 150);
+    this.onKey = e => {
+      if (this.state.lb == null) return;
+      if (e.key === 'Escape') this.close();
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { clearTimeout(this.t); clearTimeout(this.tt); window.removeEventListener('keydown', this.onKey); }
+
+  open = (id, story) => { this.setState({ lb: id, lbStory: !!story }); document.body.style.overflow = 'hidden'; };
+  close = () => { this.setState({ lb: null }); document.body.style.overflow = ''; };
+  step = d => {
+    const i = PIECES.findIndex(p => p.id === this.state.lb);
+    this.setState({ lb: PIECES[(i + d + PIECES.length) % PIECES.length].id, lbStory: false });
+  };
+
+  turnTo = target => {
+    const s = this.state;
+    if (s.turning || target === s.page || target < 0 || target >= BOOK.length) return;
+    const dir = target > s.page ? 1 : -1;
+    this.setState({ turning: dir, target, leafAng: 0 });
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ leafAng: dir > 0 ? -180 : 180 })));
+    this.tt = setTimeout(() => this.setState({ page: target, turning: 0 }), 880);
+  };
+
+  renderVals() {
+    const s = this.state, p = this.props;
+    const tint = p.hoverTint ?? true, tiltOn = p.tiltCards ?? true, spread = p.fanSpread ?? 34;
+    const n = PIECES.length, h = s.fanHover;
+    const hi = h == null ? -1 : PIECES.findIndex(x => x.id === h);
+
+    const fan = PIECES.map((x, i) => {
+      let a = -spread + i * (2 * spread / (n - 1));
+      if (hi >= 0 && i !== hi) a += i < hi ? -2.5 : 2.5;
+      const on = i === hi;
+      return {
+        title: x.title, art: x.art, z: on ? 100 : i + 1,
+        transform: s.landed ? `rotate(${on ? a * .94 : a}deg) translateY(${on ? -16 : 0}%) scale(${on ? 1.1 : 1})` : 'rotate(0deg) translateY(70%) scale(.9)',
+        opacity: s.landed ? 1 : 0,
+        transition: s.landed && s.fanHover !== undefined ? `transform .55s cubic-bezier(.2,.9,.25,1.15) ${s.dealt ? 0 : i * 45}ms, opacity .4s ${i * 45}ms` : 'none',
+        onEnter: () => this.setState({ fanHover: x.id, dealt: true }), onOpen: () => this.open(x.id),
+      };
+    });
+    const hp = h ? byId[h] : null;
+    const heroBg = tint && hp ? hp.tint : '#f7f2e2';
+    const heroInk = tint && hp && hp.dark ? '#f7f2e2' : '#2c48c7';
+
+    const cur = byId[BOOK[s.page]], tgt = byId[BOOK[s.target]];
+    const next = s.turning === 1, prevT = s.turning === -1;
+    const chapters = BOOK.map((id, i) => {
+      const act = (s.turning ? s.target : s.page) === i;
+      return { label: byId[id].title.toLowerCase(), bg: act ? '#2c48c7' : 'transparent', fg: act ? '#f7f2e2' : '#2c48c7', onClick: () => this.turnTo(i) };
+    });
+
+    const wall = WALL.map(id => {
+      const x = byId[id], t = s.tilt && s.tilt.id === id ? s.tilt : null;
+      return {
+        title: x.title, art: x.art, tag: x.tag, span: x.wide ? 'span 2' : 'auto', ratio: x.wide ? '16/9' : '3/4',
+        transform: t && tiltOn ? `rotateX(${t.rx}deg) rotateY(${t.ry}deg) scale(1.03)` : 'none',
+        transition: t ? 'transform .12s ease-out' : 'transform .6s cubic-bezier(.2,.8,.2,1)',
+        shadow: t ? '0 30px 50px -24px rgba(20,24,60,.55)' : '0 10px 20px -16px rgba(20,24,60,.35)',
+        labelOpacity: t ? 1 : 0,
+        onOpen: () => this.open(id),
+        onMove: e => {
+          const r = e.currentTarget.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+          this.setState({ tilt: { id, rx: +(-py * 12).toFixed(2), ry: +(px * 14).toFixed(2) } });
+        },
+        onLeave: () => this.setState({ tilt: null }),
+      };
+    });
+
+    let lb = null;
+    if (s.lb) {
+      const x = byId[s.lb], st = s.lbStory && x.story;
+      lb = { ...x, src: st ? x.story : x.art, hasStory: !!x.story,
+        artBg: st ? 'transparent' : '#2c48c7', artFg: st ? '#2c48c7' : '#f7f2e2',
+        storyBg: st ? '#2c48c7' : 'transparent', storyFg: st ? '#f7f2e2' : '#2c48c7' };
+    }
+
+    return {
+      artistName: p.artistName ?? 'Zainab Nayyar',
+      heroBg, heroInk, fan,
+      fanTitle: hp ? hp.title : 'fourteen posters',
+      fanSub: hp ? `no. ${hp.no} · ${hp.tag}` : 'hover the deck · click to open',
+      fanLeave: () => this.setState({ fanHover: null }),
+      openCherries: () => this.open('cherries'),
+
+      leftSrc: prevT ? tgt.art : cur.art,
+      rightSrc: next ? tgt.story : cur.story,
+      turning: !!s.turning,
+      leafLeft: next ? '50%' : '0%', leafOrigin: next ? 'left center' : 'right center', leafAng: s.leafAng,
+      leafFront: next ? cur.story : cur.art, leafBack: next ? tgt.art : tgt.story,
+      bookPrev: () => this.turnTo(s.page - 1), bookNext: () => this.turnTo(s.page + 1),
+      prevCursor: s.page > 0 ? 'w-resize' : 'default', nextCursor: s.page < BOOK.length - 1 ? 'e-resize' : 'default',
+      chapters, pageLabel: `${(s.turning ? s.target : s.page) + 1} / ${BOOK.length}`,
+
+      wall,
+      surprise: () => this.open(PIECES[Math.floor(Math.random() * n)].id),
+      total: n, lbOpen: !!lb, lb: lb || {}, close: this.close, stop: e => e.stopPropagation(),
+      prev: () => this.step(-1), next: () => this.step(1),
+      showArt: () => this.setState({ lbStory: false }), showStory: () => this.setState({ lbStory: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>
